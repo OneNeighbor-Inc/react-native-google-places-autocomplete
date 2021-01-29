@@ -19,9 +19,9 @@ import {
   ScrollView,
   Text,
   TextInput,
-  TouchableHighlight,
   View,
 } from 'react-native';
+import { TouchableHighlight } from 'react-native-gesture-handler';
 
 const defaultStyles = {
   container: {
@@ -741,6 +741,7 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
             props.suppressDefaultStyles ? {} : defaultStyles.listView,
             props.styles.listView,
           ]}
+          keyboardShouldPersistTaps="handled"
           data={dataSource}
           keyExtractor={keyGenerator}
           extraData={[dataSource, props]}
