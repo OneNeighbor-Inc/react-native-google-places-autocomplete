@@ -671,7 +671,9 @@ export const GooglePlacesAutocomplete = forwardRef((props, ref) => {
     if (!_shouldShowPoweredLogo()) {
       return null;
     }
-
+    if(props?.ListFooterComponent){
+      return props.ListFooterComponent
+    }
     return (
       <View
         style={[
